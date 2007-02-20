@@ -4,8 +4,8 @@ TH1F* ratioEachAPVPair; TH1F* ratioDistribution;
 
 
 //-----------------------------------------------------------
-//void kompare(TString fil1="files/histos_tickheight20268.root", TString fil2="files/histos_tickheight20303.root", TString whichHisto = "tickHeightOfEachApvPair"){
-void kompare(TString fil1="files/histos_firsthalf.root", TString fil2="files/histos_secondhalf.root", TString whichHisto = "ChargeOfEachAPVPair"){
+void kompare(TString fil1="files/histos_tickheight20268.root", TString fil2="files/histos_tickheight20303.root", TString whichHisto = "tickHeightOfEachApvPair"){
+//void kompare(TString fil1="files/histos_firsthalf.root", TString fil2="files/histos_secondhalf.root", TString whichHisto = "ChargeOfEachAPVPair"){
   TString outputFile = "histos_comparison.root"; TFile foutput(outputFile,"recreate");
   ratioEachAPVPair  = new TH1F("ratioEachAPVPair","ratioEachAPVPair",1,0,1); ratioEachAPVPair->SetBit(TH1::kCanRebin);
   ratioDistribution = new TH1F("ratioDistribution","ratioDistribution",200,-3,3);
