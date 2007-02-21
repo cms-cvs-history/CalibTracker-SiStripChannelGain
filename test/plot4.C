@@ -34,13 +34,14 @@ APVPairCorrections->Fit("gaussfit","QR",0,0.5,1.5);
 gStyle->SetOptFit(000011);
 z1(APVPairCorrections,  "APV Pair Corrections", false, false);
 
-TCanvas *myCanvas = new TCanvas("zc","zC",500,0,700,700); myCanvas->Divide(2,2);
-APVPairCorrectionsTIB1->SetYTitle("APV Pairs");
-myCanvas->cd(1); d1layer(APVPairCorrectionsTIB1,"TIB1", false, false);
-myCanvas->cd(2); d1layer(APVPairCorrectionsTIB2,"TIB2", false, false);
-myCanvas->cd(3); d1layer(APVPairCorrectionsTOB1,"TOB1", false, false);
-APVPairCorrectionsTOB2->SetXTitle("Particle Correction");
-myCanvas->cd(4); d1layer(APVPairCorrectionsTOB2,"TOB2", false, false);
+TCanvas *myCanvas = new TCanvas("zc","zC",500,0,700,700); myCanvas->Divide(2,3);
+APVPairCorrectionsTIB1mono->SetYTitle("APV Pairs");
+myCanvas->cd(1); d1layer(APVPairCorrectionsTIB1mono,"TIB1mono", false, false);
+myCanvas->cd(2); d1layer(APVPairCorrectionsTIB1stereo,"TIB1stereo", false, false);
+myCanvas->cd(3); d1layer(APVPairCorrectionsTIB2,"TIB2", false, false);
+APVPairCorrectionsTOB1->SetXTitle("Particle Correction");
+myCanvas->cd(4); d1layer(APVPairCorrectionsTOB1,"TOB1", false, false);
+myCanvas->cd(5); d1layer(APVPairCorrectionsTOB2,"TOB2", false, false);
 myCanvas->Print("ParticleGainLayers.gif");
 
 }
