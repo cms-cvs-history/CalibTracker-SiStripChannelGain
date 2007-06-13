@@ -1,11 +1,11 @@
  module siStripGainRandomCalculator =  SiStripGainRandomCalculator {
 
 		double MinPositiveGain = 0.1
-		double MeanGain    = 1.
-		double SigmaGain   = 0.1
+		double MeanGain    = 1
+		double SigmaGain   = 0
                 untracked bool   printDebug = false
 
-		bool SinceAppendMode = false
+		bool SinceAppendMode = true
 		string IOVMode	     = "Run"
 		string Record        = "SiStripApvGainRcd"
 
