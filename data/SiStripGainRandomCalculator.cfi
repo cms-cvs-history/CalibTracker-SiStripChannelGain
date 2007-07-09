@@ -8,5 +8,6 @@
 		bool SinceAppendMode = true
 		string IOVMode	     = "Run"
 		string Record        = "SiStripApvGainRcd"
+		bool doStoreOnDB     = true
 
                }
