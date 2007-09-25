@@ -65,13 +65,15 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
   
   for (size_t id=0;id<detid.size();id++){
     SiStripApvGain::Range range=SiStripApvGain_->getRange(detid[id]);
+  
+    edm::LogInfo("SiStripApvGainDisplay") << "[SiStripApvGainDisplay::analyze] detid " << detid[id]<< std::endl;
 
     SiStripDetId a(detid[id]);
 
     if(range.second-range.first==2){
 
       tkMap[0]->fill(detid[id],SiStripApvGain_->getApvGain(0,range) ); 
-      tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(1,range) ); 
+      // tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(1,range) ); 
 
       if ( a.subDetector() == SiStripDetId::TIB ){
 	fhTIB[0]->Fill(SiStripApvGain_->getApvGain(0,range));
@@ -90,8 +92,8 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
     } else {
 
       tkMap[0]->fill(detid[id],SiStripApvGain_->getApvGain(0,range) );
-      tkMap[1]->fill(detid[id],SiStripApvGain_->getApvGain(1,range) ); 
-      tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(2,range) ); 
+      // tkMap[1]->fill(detid[id],SiStripApvGain_->getApvGain(1,range) ); 
+      // tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(2,range) ); 
 
       if ( a.subDetector() == SiStripDetId::TIB ){
 	fhTIB[0]->Fill(SiStripApvGain_->getApvGain(0,range));
