@@ -59,9 +59,9 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
   }
   
   TrackerMap * tkMap[3];
-  tkMap[0] = new TrackerMap( "Gain APVPair 1" , 340, 200, "svgmap1.xml" );
-  tkMap[1] = new TrackerMap( "Gain APVPair 2" , 340, 200, "svgmap2.xml" );
-  tkMap[2] = new TrackerMap( "Gain APVPair 3" , 340, 200, "svgmap3.xml" );
+  tkMap[0] = new TrackerMap( "Gain APVPair 1"  );
+  tkMap[1] = new TrackerMap( "Gain APVPair 2"  );
+  tkMap[2] = new TrackerMap( "Gain APVPair 3"  );
   
   for (size_t id=0;id<detid.size();id++){
     SiStripApvGain::Range range=SiStripApvGain_->getRange(detid[id]);
@@ -115,9 +115,9 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
 
     }
   }
-  tkMap[0]->print(true);
-  tkMap[1]->print(true);
-  tkMap[2]->print(true);
+  tkMap[0]->print(true, 0, 0, "svgmap1.xml");
+  tkMap[1]->print(true, 0, 0, "svgmap2.xml");
+  tkMap[2]->print(true, 0, 0, "svgmap3.xml");
 
   fFile->Write();
   fFile->Close();
