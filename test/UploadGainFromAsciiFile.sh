@@ -5,7 +5,7 @@ templateCFG=template_UploadGainFromAsciiFile.cfg
 [ ! -e AsciiDir ] && mkdir AsciiDir
 for mode in TIBTOB TIF
   do
-  [ "$mode" == "TIBTOB" ] && listRun="6094 6445 6891 7222"
+  [ "$mode" == "TIBTOB" ] && listRun="6094 6094 6445 6891 7222"
   [ "$mode" == "TIF" ] && listRun="8427 9148 9242 10212 10607 10821 11176 11311 12043"
   
   for run in ${listRun}
