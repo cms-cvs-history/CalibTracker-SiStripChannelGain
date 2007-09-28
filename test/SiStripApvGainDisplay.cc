@@ -73,44 +73,44 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
     if(range.second-range.first==2){
 
       tkMap[0]->fill(detid[id],SiStripApvGain_->getApvGain(0,range) ); 
-      tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(1,range) ); 
+      tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(2,range) ); 
 
       if ( a.subDetector() == SiStripDetId::TIB ){
 	fhTIB[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTIB[2]->Fill(SiStripApvGain_->getApvGain(1,range));
+	fhTIB[2]->Fill(SiStripApvGain_->getApvGain(2,range));
       } else if ( a.subDetector() == SiStripDetId::TID ){
 	fhTID[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTID[2]->Fill(SiStripApvGain_->getApvGain(1,range));
+	fhTID[2]->Fill(SiStripApvGain_->getApvGain(2,range));
       } else if ( a.subDetector() == SiStripDetId::TOB ){
 	fhTOB[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTOB[2]->Fill(SiStripApvGain_->getApvGain(1,range));
+	fhTOB[2]->Fill(SiStripApvGain_->getApvGain(2,range));
       } else if ( a.subDetector() == SiStripDetId::TEC ){
 	fhTEC[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTEC[2]->Fill(SiStripApvGain_->getApvGain(1,range));
+	fhTEC[2]->Fill(SiStripApvGain_->getApvGain(2,range));
       }
 
     } else {
 
       tkMap[0]->fill(detid[id],SiStripApvGain_->getApvGain(0,range) );
-      tkMap[1]->fill(detid[id],SiStripApvGain_->getApvGain(1,range) ); 
-      tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(2,range) ); 
+      tkMap[1]->fill(detid[id],SiStripApvGain_->getApvGain(2,range) ); 
+      tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(4,range) ); 
 
       if ( a.subDetector() == SiStripDetId::TIB ){
 	fhTIB[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTIB[1]->Fill(SiStripApvGain_->getApvGain(1,range));
-	fhTIB[2]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTIB[1]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTIB[2]->Fill(SiStripApvGain_->getApvGain(4,range));
       } else if ( a.subDetector() == SiStripDetId::TID ){
 	fhTID[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTID[1]->Fill(SiStripApvGain_->getApvGain(1,range));
-	fhTID[2]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTID[1]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTID[2]->Fill(SiStripApvGain_->getApvGain(4,range));
       } else if ( a.subDetector() == SiStripDetId::TOB ){
 	fhTOB[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTOB[1]->Fill(SiStripApvGain_->getApvGain(1,range));
-	fhTOB[2]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTOB[1]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTOB[2]->Fill(SiStripApvGain_->getApvGain(4,range));
       } else if ( a.subDetector() == SiStripDetId::TEC ){
 	fhTEC[0]->Fill(SiStripApvGain_->getApvGain(0,range));
-	fhTEC[1]->Fill(SiStripApvGain_->getApvGain(1,range));
-	fhTEC[2]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTEC[1]->Fill(SiStripApvGain_->getApvGain(2,range));
+	fhTEC[2]->Fill(SiStripApvGain_->getApvGain(4,range));
       }
 
     }
