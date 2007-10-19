@@ -9,7 +9,6 @@
 #include "DataFormats/SiStripDetId/interface/SiStripDetId.h"
 
 #include "TROOT.h"
-#include "TFile.h"
 #include "TTree.h"
 #include "TH1F.h"
 #include "TString.h"
@@ -17,12 +16,20 @@
 #include "TCanvas.h"
 #include "TPostScript.h"
 
+#include <sstream>
 #include <iostream>
 #include <stdio.h>
 #include <sys/time.h>
 
 
 void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup& iSetup){
+
+  unsigned long long cacheID = iSetup.get<SiStripApvGainRcd>().cacheIdentifier();
+  
+  if (m_cacheID_ == cacheID) 
+    return;
+
+  m_cacheID_=cacheID;
 
   edm::ESHandle<SiStripApvGain> SiStripApvGain_;
   iSetup.get<SiStripApvGainRcd>().get(SiStripApvGain_);
@@ -42,8 +49,13 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
 					     << std::endl; 
   }
 
-  TFile* fFile= new TFile("Gains.root","RECREATE");
+  std::stringstream ss;
+
   fFile->cd();
+  ss.str("");
+  ss<< e.id().run();
+  fFile->mkdir(ss.str().c_str());
+  fFile->cd(ss.str().c_str());
   TH1F *fhTIB[3], *fhTOB[3], *fhTEC[3], *fhTID[3]; 
   char title[128];
 
@@ -66,11 +78,13 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
   for (size_t id=0;id<detid.size();id++){
     SiStripApvGain::Range range=SiStripApvGain_->getRange(detid[id]);
   
-    edm::LogInfo("SiStripApvGainDisplay") << "[SiStripApvGainDisplay::analyze] detid " << detid[id]<< std::endl;
-
     SiStripDetId a(detid[id]);
 
-    if(range.second-range.first==2){
+    //Looking only at the first apv of an apvPair
+    if(range.second-range.first==4){
+
+      edm::LogInfo("SiStripApvGainDisplay") << "[SiStripApvGainDisplay::analyze] 4 apvs det " << detid[id]<< std::endl;
+
 
       tkMap[0]->fill(detid[id],SiStripApvGain_->getApvGain(0,range) ); 
       tkMap[2]->fill(detid[id],SiStripApvGain_->getApvGain(2,range) ); 
@@ -89,7 +103,9 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
 	fhTEC[2]->Fill(SiStripApvGain_->getApvGain(2,range));
       }
 
-    } else {
+    } else if(range.second-range.first==6){
+
+      edm::LogInfo("SiStripApvGainDisplay") << "[SiStripApvGainDisplay::analyze] 6 apvs det " << detid[id]<< std::endl;
 
       tkMap[0]->fill(detid[id],SiStripApvGain_->getApvGain(0,range) );
       tkMap[1]->fill(detid[id],SiStripApvGain_->getApvGain(2,range) ); 
@@ -113,12 +129,28 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
 	fhTEC[2]->Fill(SiStripApvGain_->getApvGain(4,range));
       }
 
+    } else {
+      edm::LogInfo("SiStripApvGainDisplay") << "[SiStripApvGainDisplay::analyze] det " << detid[id]<< " has only " << range.second-range.first << " apvs recorded" << std::endl;
     }
   }
-  tkMap[0]->print(true, 0, 0, "svgmap1.xml");
-  tkMap[1]->print(true, 0, 0, "svgmap2.xml");
-  tkMap[2]->print(true, 0, 0, "svgmap3.xml");
+
+  ss.str(""); ss << "svgmapTk_Run_" <<  e.id().run() << "_Fiber0";
+  tkMap[0]->showPalette(true);
+  tkMap[0]->print(true, 0, 0, ss.str().c_str());
+  ss.str(""); ss << "svgmapTk_Run_" <<  e.id().run() << "_Fiber1";
+  tkMap[1]->showPalette(true);
+  tkMap[1]->print(true, 0, 0, ss.str().c_str());
+  ss.str(""); ss << "svgmapTk_Run_" <<  e.id().run() << "_Fiber2";
+  tkMap[2]->showPalette(true);
+  tkMap[2]->print(true, 0, 0, ss.str().c_str());
+
 
   fFile->Write();
-  fFile->Close();
+  fFile->Save();
+  for (int i=0;i<3;++i){
+   delete  fhTIB[i];
+   delete  fhTID[i];
+   delete  fhTOB[i];
+   delete  fhTEC[i];
+  }
 }
