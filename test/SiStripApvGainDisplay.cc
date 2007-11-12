@@ -20,7 +20,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <sys/time.h>
-
+#include <iomanip>
 
 void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup& iSetup){
 
@@ -134,16 +134,20 @@ void SiStripApvGainDisplay::analyze( const edm::Event& e, const edm::EventSetup&
     }
   }
 
-  ss.str(""); ss << "svgmapTk_Run_" <<  e.id().run() << "_Fiber0";
   tkMap[0]->showPalette(true);
-  tkMap[0]->print(true, 0, 0, ss.str().c_str());
-  ss.str(""); ss << "svgmapTk_Run_" <<  e.id().run() << "_Fiber1";
   tkMap[1]->showPalette(true);
-  tkMap[1]->print(true, 0, 0, ss.str().c_str());
-  ss.str(""); ss << "svgmapTk_Run_" <<  e.id().run() << "_Fiber2";
   tkMap[2]->showPalette(true);
-  tkMap[2]->print(true, 0, 0, ss.str().c_str());
+  ss.str(""); ss << "TkMapGain_Run_" << std::setw(6) << std::setfill('0') << e.id().run() << std::setw(0) << "_Fiber";
+  std::stringstream ssFull;
 
+  for (int i=0;i<3;++i){
+    ssFull.str(""); ssFull << ss.str() << i <<".pdf";
+  tkMap[i]->save(true, 0, 0, ssFull.str().c_str());
+    ssFull.str(""); ssFull << ss.str() << i << ".png";
+  tkMap[i]->save(true, 0, 0, ssFull.str().c_str());
+    ssFull.str(""); ssFull << ss.str() << i;
+  tkMap[i]->print(true, 0, 0, ssFull.str().c_str());
+  }
 
   fFile->Write();
   fFile->Save();
