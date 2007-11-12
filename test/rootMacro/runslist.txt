@@ -1,0 +1,103 @@
+#http://home.fnal.gov/~noeding/mtcc_tracker_reprocessing.html
+#Remarks  	B Field [T]  	Run Number  	Events  	Total  	pass1  	pass2  	pass2 (with alignment)  	pass2 (TEC)
+	LATENCY SCAN 	0.0 	2476 	21763 	  		OK 	OK 	 
+	LATENCY SCAN 	0.0 	2478 	20497 	  		OK 	OK 	 
+	LATENCY SCAN 	0.0 	2479 	40499 	  		OK 	OK 	 
+	LATENCY SCAN 	0.0 	2480 	42610 	  		OK 	OK 	 
+	  	  	  	  	  		  	  	 
+g	  	0.0 	2501 	91,677 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2502 	87,201 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2503 	140,728 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2505 	50,291 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2506 	90,258 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2507 	10,062 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2515 	66,563 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2516 	100,241 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2517 	148,494 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2518 	359,107 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2523 	32,916 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2524 	151,523 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2525 	161,193 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2526 	575,431 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2527 	462,349 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2529 	159,035 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2530 	596,426 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2531 	122,976 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2532 	692,922 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2534 	346,506 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2544 	145,833 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2545 	356,329 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2546 	496,818 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2547 	188,355 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2548 	142,885 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2549 	817,635 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2550 	688,110 	7,407,233 	OK 	OK 	OK 	OK
+g	  	0.0 	2552 	176,624 	7,458,488 	ERROR 	ERROR 	ERROR 	 
+	  	  	  	  	  		  	  	 
+g	RAMPING 	2.5 	2555 	532,658 	  	OK 	OK 	OK 	 
+g	RAMPING 	3.0 	2556 	79,654 	  	OK 	OK 	OK 	 
+g	RAMPING 	3.0 	2557 	208,721 	  	OK 	OK 	OK 	 
+g	RAMPING 	3.4 	2559 	700,234 	1,521,267 	OK 	OK 	OK 	 
+	  	  	  	  	  		  	  	 
+g	  	3.8 	2560 	5,722 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2561 	3,724 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2564 	92,894 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2565 	519,166 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2567 	355,716 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2568 	137,684 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2569 	43,939 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2570 	82,260 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2571 	149,838 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2577 	16,930 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2578 	187,613 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2579 	974,811 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2580 	28,207 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2581 	585,765 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2583 	716,283 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2584 	675,063 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2587 	863,688 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2589 	221,165 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2590 	15,829 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2591 	30,313 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2593 	608,638 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2594 	622,258 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2596 	759,650 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2599 	766,532 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2600 	776,956 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2602 	1,000,502 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2603 	379,296 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2605 	139,750 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2610 	65,991 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2613 	333,587 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2614 	504,037 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2615 	40,192 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2616 	18,847 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2617 	510,008 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2618 	508,772 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2621 	868,770 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2622 	2,793 	  	OK 	OK 	OK 	OK
+g	  	3.8 	2623 	152,487 	13,765,676 	OK 	OK 	OK 	OK
+
+g	RAMPING 	3.9 	2624 	751,889 	751,889 	OK 	OK 	OK 	 
+	  	  	  	  	  		  	  	 
+g	  	4.0 	2625 	466,885 	  	OK 	OK 	OK 	OK
+g	  	4.0 	2626 	538,970 	  	OK 	OK 	OK 	OK
+g	  	4.0 	2631 	657,475 	  	OK 	OK 	OK 	OK
+g	  	4.0 	2632 	52,220 	1,715,550 	OK 	OK 	OK 	OK
+	  	  	  	  	  		  	  	 
+g	  	0.0 	2636 	12,515 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2637 	249,752 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2638 	506,992 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2639 	210,683 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2640 	1,024,908 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2641 	230,189 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2642 	121,466 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2643 	1,004,326 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2645 	137,734 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2647 	422,776 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2649 	3,212 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2654 	36,420 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2658 	19 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2659 	256 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2660 	256 	  	OK 	OK 	OK 	OK
+g	  	0.0 	2661 	23,435 	3,984,939 	OK 	OK 	OK 	OK
