@@ -4,17 +4,10 @@
 #include "CalibTracker/SiStripChannelGain/test/SiStripApvGainDisplay.h"
 
 #include "CommonTools/TrackerMap/interface/TrackerMap.h"
-#include "CommonTools/TrackerMap/interface/TmModule.h" 
 
 #include "DataFormats/SiStripDetId/interface/SiStripDetId.h"
 
-#include "TROOT.h"
-#include "TTree.h"
 #include "TH1F.h"
-#include "TString.h"
-#include "TObjArray.h"
-#include "TCanvas.h"
-#include "TPostScript.h"
 
 #include <sstream>
 #include <iostream>
