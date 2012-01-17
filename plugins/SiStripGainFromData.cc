@@ -1077,8 +1077,8 @@ SiStripGainFromData::algoAnalyze(const edm::Event& iEvent, const edm::EventSetup
 	 if(sistripsimplehit){
 	     ComputeChargeOverPath((sistripsimplehit->cluster()).get(), trajState, &iSetup, &track, traj.chiSquared()/ndof);
 	 }else if(sistripmatchedhit){
-             ComputeChargeOverPath((sistripmatchedhit->monoHit()  ->cluster()).get(),trajState, &iSetup, &track, traj.chiSquared()/ndof); 
-             ComputeChargeOverPath((sistripmatchedhit->stereoHit()->cluster()).get(),trajState, &iSetup, &track, traj.chiSquared()/ndof);
+             ComputeChargeOverPath(&sistripmatchedhit->monoCluster(),trajState, &iSetup, &track, traj.chiSquared()/ndof); 
+             ComputeChargeOverPath(&sistripmatchedhit->stereoCluster(),trajState, &iSetup, &track, traj.chiSquared()/ndof);
          }else if(sistripsimple1dhit){
              ComputeChargeOverPath((sistripsimple1dhit->cluster()).get(), trajState, &iSetup, &track, traj.chiSquared()/ndof);
 	 }else{		
@@ -1209,17 +1209,17 @@ bool SiStripGainFromData::IsFarFromBorder(TrajectoryStateOnSurface trajState, co
   const RectangularPlaneBounds* rectangularBounds( dynamic_cast<const RectangularPlaneBounds*>(&(plane.bounds())));
 
   double DistFromBorder = 1.0;    
-  double HalfWidth      = it->surface().bounds().width()  /2.0;
+  //double HalfWidth      = it->surface().bounds().width()  /2.0;
   double HalfLength     = it->surface().bounds().length() /2.0;
 
   if(trapezoidalBounds)
   {
      std::vector<float> const & parameters = (*trapezoidalBounds).parameters();
      HalfLength     = parameters[3];
-     double t       = (HalfLength + HitLocalPos.y()) / (2*HalfLength) ;
-     HalfWidth      = parameters[0] + (parameters[1]-parameters[0]) * t;
+     //double t       = (HalfLength + HitLocalPos.y()) / (2*HalfLength) ;
+     //HalfWidth      = parameters[0] + (parameters[1]-parameters[0]) * t;
   }else if(rectangularBounds){
-     HalfWidth      = it->surface().bounds().width()  /2.0;
+     //HalfWidth      = it->surface().bounds().width()  /2.0;
      HalfLength     = it->surface().bounds().length() /2.0;
   }else{return false;}
 
