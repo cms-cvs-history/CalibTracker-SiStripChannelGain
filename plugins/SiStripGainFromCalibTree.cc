@@ -38,10 +38,6 @@
 #include "DataFormats/SiStripDetId/interface/SiStripSubStructure.h"
 #include "DataFormats/DetId/interface/DetId.h"
 #include "DataFormats/SiStripDetId/interface/StripSubdetector.h"
-#include "DataFormats/SiStripDetId/interface/TECDetId.h"
-#include "DataFormats/SiStripDetId/interface/TIBDetId.h"
-#include "DataFormats/SiStripDetId/interface/TIDDetId.h"
-#include "DataFormats/SiStripDetId/interface/TOBDetId.h"
 #include "DataFormats/TrackReco/interface/DeDxHit.h"
 #include "DataFormats/TrackReco/interface/TrackDeDxHits.h"
 
@@ -241,7 +237,7 @@ SiStripGainFromCalibTree::algoBeginJob(const edm::EventSetup& iSetup)
    iSetup.get<SiStripGainRcd>().get(gainHandle);
    if(!gainHandle.isValid()){printf("\n#####################\n\nERROR --> gainHandle is not valid\n\n#####################\n\n");exit(0);}
  
-   size_t numberOfTag = gainHandle->getNumberOfTags();
+//   size_t numberOfTag = gainHandle->getNumberOfTags();
    for(unsigned int i=0;i<gainHandle->getNumberOfTags();i++){
       printf("Reccord %i --> Rcd Name = %s    Label Name = %s\n",i,gainHandle->getRcdName(i).c_str(), gainHandle->getLabelName(i).c_str());
    }
@@ -363,7 +359,7 @@ bool SiStripGainFromCalibTree::IsGoodLandauFit(double* FitResults){
 void SiStripGainFromCalibTree::algoAnalyzeTheTree()
 {
    for(unsigned int i=0;i<VInputFiles.size();i++){
-      printf("Openning file %3i/%3i --> %s\n",i+1,VInputFiles.size(),VInputFiles[i].c_str()); fflush(stdout);
+      printf("Openning file %3i/%3i --> %s\n",i+1, (int)VInputFiles.size(), (char*)(VInputFiles[i].c_str())); fflush(stdout);
       TChain* tree = new TChain("gainCalibrationTree/tree");
       tree->Add(VInputFiles[i].c_str());
 
